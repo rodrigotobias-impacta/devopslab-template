@@ -51,7 +51,11 @@ jobs:
   Deploy:
     needs: Build
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      
     steps:
       - name: Download do Repositório
         uses: actions/checkout@v4       # https://github.com/actions/checkout
